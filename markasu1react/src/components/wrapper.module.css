@@ -1,0 +1,9 @@
+.box {
+    background: blue;
+    height: 200px;;
+    width: 200px;
+}
+
+.interface {
+    background: red;
+}
