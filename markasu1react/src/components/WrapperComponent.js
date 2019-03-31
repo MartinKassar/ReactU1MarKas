@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import styles from './wrapper.module.css'
-// import React, { Fragment } from 'react'
 
 
 
+// This class works as wrapper for the things we render as children, that ends up in a card. 
+//We can adjust state fors show content as well.
 export class WrapperComponent extends Component {
   constructor() {
     super();
@@ -11,67 +12,28 @@ export class WrapperComponent extends Component {
       showContent: true
     };
   }
-
-  changeState = () =>  {
-    console.log(this.state.showContent)
-         this.setState({showContent: !this.state.showContent})
-         
-         
-    //     this.setState(prevState => ({
-    //    state: !prevState.state
-    //  }));
-   }
+  // Change state showconte as a toggle to hide and show content
+  changeState = () => {
+    this.setState({ showContent: !this.state.showContent })
+    
+  }
 
   render() {
-    
+
     return (
-      
-      <div className={styles.box}>
-        {this.state.showContent && this.props.children}
-        
-      <button onClick={this.changeState}>show content</button>
+      <div className={styles.parentBox}>
+        <div className={styles.box}>
+          {this.state.showContent && this.props.children}
+
+          <button onClick={this.changeState}>show content</button>
+        </div>
+
       </div>
-      
-      
-      
+
     )
-    
-    }
+
+  }
 }
 
 export default WrapperComponent
 
-//   constructor() {
-//     super();
-//     this.state = {
-//       isLoggedIn: true
-//     };
-//   }
-
-//   changeState = () =>  {
-//     this.setState({isLoggedIn: !this.state.isLoggedIn})
-// //    this.setState(prevState => ({
-// //   state: !prevState.state
-// // }));
-//   }
-
-//   render() {
-    
-//     console.log(this.state.isLoggedIn)
-//     return this.state.isLoggedIn ? (
-//       <div className="box">
-      
-//       <input/>
-//       <button>add</button>
-//       <button>removez</button>
-      
-//       <button onClick={this.changeState}>show content</button>
-//       </div>
-//     ) : (
-//       <div className="box">
-//       <button onClick={this.changeState}>show content</button>
-//       </div>
-//     )
-    
-//   }
-// }
