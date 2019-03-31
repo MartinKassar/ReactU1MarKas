@@ -4,7 +4,7 @@ import styles from './wrapper.module.css'
 
 
 // This class works as wrapper for the things we render as children, that ends up in a card. 
-//We can adjust state fors show content as well.
+//We can adjust state for show content as well. Content is showing deopending on the boolean of state showContent
 export class WrapperComponent extends Component {
   constructor() {
     super();
